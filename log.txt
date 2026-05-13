@@ -2,3 +2,4 @@ Part 2: Voice greeting added
 Part 2: Keyword recognition 
 Part 2: Random responses 
 Part 2: Memory and sentiment 
+Part 2: Error handling 
