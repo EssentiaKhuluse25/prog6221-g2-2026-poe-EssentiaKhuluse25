@@ -1,0 +1,66 @@
+﻿<Window x:Class="CybersecurityChatbotWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cybersecurity Awareness Bot" 
+        Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E2E">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Simplified ASCII Art - No problematic characters -->
+        <Border Grid.Row="0" Background="#2D2D3A" CornerRadius="10" Margin="0,0,0,10" Padding="10">
+            <StackPanel>
+                <TextBlock FontFamily="Consolas" FontSize="10" Foreground="#4A90D9" TextAlignment="Center">
+                    ╔══════════════════════════════════════════════╗
+                    ║     CYBERSECURITY AWARENESS BOT             ║
+                    ║     ===============================         ║
+                    ║          LOCK AND SHIELD                    ║
+                    ║     PROTECT YOUR DIGITAL LIFE!              ║
+                    ╚══════════════════════════════════════════════╝
+                </TextBlock>
+            </StackPanel>
+        </Border>
+
+        <!-- Name Section -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <TextBlock Text="Your Name:" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="txtUserName" Width="200" Height="35" Background="#2D2D3A" Foreground="White" BorderBrush="#4A90D9" BorderThickness="1"/>
+            <Button x:Name="btnStart" Content="Start Chat" Width="100" Height="35" Margin="10,0" Background="#4A90D9" Foreground="White" Click="BtnStart_Click"/>
+            <Button x:Name="btnPlayVoice" Content="Play Greeting" Width="120" Height="35" Background="#4A90D9" Foreground="White" Click="BtnPlayVoice_Click"/>
+        </StackPanel>
+
+        <!-- Chat Display -->
+        <Border Grid.Row="3" Background="#2D2D3A" CornerRadius="10" Margin="0,10" Padding="10">
+            <ListBox x:Name="lstChat" Background="#2D2D3A" Foreground="White" FontSize="13" BorderBrush="#4A90D9"/>
+        </Border>
+
+        <!-- Input Area -->
+        <Grid Grid.Row="4" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtUserInput" Grid.Column="0" Height="50" Background="#2D2D3A" Foreground="White" BorderBrush="#4A90D9" BorderThickness="1" Padding="10" KeyDown="TxtUserInput_KeyDown"/>
+            <Button x:Name="btnSend" Grid.Column="1" Content="Send" Width="80" Height="50" Margin="10,0" Background="#4A90D9" Foreground="White" Click="BtnSend_Click"/>
+        </Grid>
+
+        <!-- Quick Buttons -->
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+            <Button x:Name="btnPassword" Content="Password Safety" Width="120" Margin="5" Background="#4A90D9" Foreground="White" Click="QuickTopic_Click" Tag="password"/>
+            <Button x:Name="btnPhishing" Content="Phishing" Width="100" Margin="5" Background="#4A90D9" Foreground="White" Click="QuickTopic_Click" Tag="phishing"/>
+            <Button x:Name="btnPrivacy" Content="Privacy" Width="100" Margin="5" Background="#4A90D9" Foreground="White" Click="QuickTopic_Click" Tag="privacy"/>
+            <Button x:Name="btnScam" Content="Scams" Width="100" Margin="5" Background="#4A90D9" Foreground="White" Click="QuickTopic_Click" Tag="scam"/>
+            <Button x:Name="btnBrowsing" Content="Safe Browsing" Width="120" Margin="5" Background="#4A90D9" Foreground="White" Click="QuickTopic_Click" Tag="browsing"/>
+            <Button x:Name="btnClear" Content="Clear Chat" Width="100" Margin="5" Background="#E74C3C" Foreground="White" Click="BtnClear_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
